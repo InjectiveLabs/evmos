@@ -81,8 +81,8 @@ func (options HandlerOptions) Validate() error {
 	return nil
 }
 
-// newEVMAnteHandler creates the default ante handler for Ethereum transactions
-func newEVMAnteHandler(options HandlerOptions) sdk.AnteHandler {
+// NewEVMAnteHandler creates the default ante handler for Ethereum transactions
+func NewEVMAnteHandler(options HandlerOptions) sdk.AnteHandler {
 	return sdk.ChainAnteDecorators(
 		// outermost AnteDecorator. SetUpContext must be called first
 		evmante.NewEthSetUpContextDecorator(options.EvmKeeper),
